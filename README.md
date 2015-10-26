@@ -1,3 +1,3 @@
-#Spqce QIX GBA
+#Space QIX GBA
 GBAのゲームです。  
 DivkitProでコンパイル可能です。

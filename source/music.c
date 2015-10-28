@@ -8,19 +8,17 @@
 const WaveListType MusicList[] =
   {
     { m0_bin, SAMPLING_M0, 10 }, //データアドレス, データ長, 優先度
-    { m1_bin, SAMPLING_M1, 10 },
-    { m2_bin, SAMPLING_M2, 10 },
-    { m3_bin, SAMPLING_M3, 10 }
-  };
+        { m1_bin, SAMPLING_M1, 10 },
+        { m2_bin, SAMPLING_M2, 10 },
+        { m3_bin, SAMPLING_M3, 10 } };
 
 const WaveListType SoundList[] =
   {
     { s0_bin, SAMPLING_E0, 40 }, //データアドレス, データ長, 優先度(数字が小さいほど高い）
-    { s1_bin, SAMPLING_E1, 20 },
-    { s2_bin, SAMPLING_E2, 30 },
-    { s3_bin, SAMPLING_E3, 10 },
-    { s4_bin, SAMPLING_E4, 50 }
-  };
+        { s1_bin, SAMPLING_E1, 20 },
+        { s2_bin, SAMPLING_E2, 30 },
+        { s3_bin, SAMPLING_E3, 10 },
+        { s4_bin, SAMPLING_E4, 50 } };
 
 //*************************************************************
 // 曲(A) 停止
@@ -189,7 +187,7 @@ StartSound (u32* sound_src)
 
   // タイマー1の値を設定 u16の－値がサンプリングレート(周波数)になる
   //REG_TM0D = (u16)(-1520);
-  REG_TM1D = (u16)(-760);
+  REG_TM1D = (u16) (-760);
 
   // DMA転送設定
   // REG_DM2CNT_L = 0;		//「すずめ愛好会」より「DMAの転送サイズの値は無視されるので...」

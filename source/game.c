@@ -309,6 +309,7 @@ disp_crash (void)
     {
       game_state.scene = GAME_OVER;
       init_sprite ();
+      StopMusic ();
       PlayMusic (MUSIC_OVER, PLAY_LOOP_OFF);
       save_hiscore (stage.score);
 
@@ -824,6 +825,7 @@ set_crash (void)
   save_bitmap ( DEF_CRASH_X, DEF_CRASH_Y, DEF_CRASH_W, DEF_CRASH_H, mes.save);
   // 自機回転
   set_rot_ship ();
+  StopMusic ();
   PlaySound (SOUND_CRASH);
 }
 
@@ -979,6 +981,7 @@ set_beam (void)
     beam[i].direc = i % MAX_BEAM;
     beam[i].wait = beam[i].wait_rel = clear_level.beam_speed;
   }
+
   PlaySound (SOUND_BEAM);
 }
 
@@ -1571,6 +1574,7 @@ draw_area (void)
   // クリア判定
   if (stage.area > clear_level.clear_area_nomal)
   {
+    StopMusic ();
     PlayMusic (MUSIC_OVER, PLAY_LOOP_OFF);
     game_state.scene = GAME_CLEAR;
     // タイムのボーナス

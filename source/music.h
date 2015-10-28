@@ -85,10 +85,10 @@ struct ds_struc
   u8 loopflg;        // ループ演奏 0:ループしません 1:ループ
 };
 
-GLOBAL struct ds_struc DSmusic;	// 楽曲用
-GLOBAL struct ds_struc DSeffect;	// 効果音用
+GLOBAL struct ds_struc DSmusic; // 楽曲用
+GLOBAL struct ds_struc DSeffect;  // 効果音用
 
-GLOBAL u16 save_REG_SGCNT0_H;
+GLOBAL u16 save_REG_SGCNT0_H;//// debug 2015-10-28
 
 #define PLAY_LOOP_ON  1 // ループ演奏 1:ループ
 #define PLAY_LOOP_OFF 0 // ループ演奏 0:ループ無し
@@ -110,4 +110,4 @@ IRQ_Music ();
 void
 IRQ_Sound ();
 
-#endif	/* _music_h_ */
+#endif  /* _music_h_ */

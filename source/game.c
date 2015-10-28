@@ -248,7 +248,6 @@ disp_title (void)
     mes.chr = 0;
     mes.wait = mes.wait_rel = DEF_MES_WAIT;
     save_bitmap ( DEF_READY_X, DEF_READY_Y, DEF_READY_W, DEF_READY_H, mes.save);
-    StopMusic ();
     PlayMusic (MUSIC_READY, PLAY_LOOP_OFF);
   }
   else if ((key & KEY_R) && (key & KEY_B))
@@ -278,7 +277,6 @@ disp_ready (void)
   if (!--mes.count)
   {
     game_state.scene = GAME_MAIN;
-    StopMusic ();
     PlayMusic (MUSIC_STAGE, PLAY_LOOP_ON);
   }
 }
@@ -311,7 +309,6 @@ disp_crash (void)
     {
       game_state.scene = GAME_OVER;
       init_sprite ();
-      StopMusic ();
       PlayMusic (MUSIC_OVER, PLAY_LOOP_OFF);
       save_hiscore (stage.score);
 
@@ -340,7 +337,6 @@ disp_over (void)
     // タイトル
     init_title ();
     init_sprite ();
-    StopMusic ();
     PlayMusic (MUSIC_TITLE, PLAY_LOOP_ON);
   }
 }
@@ -559,7 +555,6 @@ restart (void)
   mes.chr = 0;
   mes.wait = mes.wait_rel = DEF_MES_WAIT;
   save_bitmap ( DEF_READY_X, DEF_READY_Y, DEF_READY_W, DEF_READY_H, mes.save);
-  StopMusic ();
   PlayMusic (MUSIC_READY, PLAY_LOOP_OFF);
 }
 
@@ -603,7 +598,6 @@ next_stage (void)
   mes.chr = 0;
   mes.wait = mes.wait_rel = DEF_MES_WAIT;
   save_bitmap ( DEF_READY_X, DEF_READY_Y, DEF_READY_W, DEF_READY_H, mes.save);
-  StopMusic ();
   PlayMusic (MUSIC_READY, PLAY_LOOP_OFF);
 }
 
@@ -830,7 +824,6 @@ set_crash (void)
   save_bitmap ( DEF_CRASH_X, DEF_CRASH_Y, DEF_CRASH_W, DEF_CRASH_H, mes.save);
   // 自機回転
   set_rot_ship ();
-  StopMusic ();
   PlaySound (SOUND_CRASH);
 }
 
@@ -1578,7 +1571,6 @@ draw_area (void)
   // クリア判定
   if (stage.area > clear_level.clear_area_nomal)
   {
-    StopMusic ();
     PlayMusic (MUSIC_OVER, PLAY_LOOP_OFF);
     game_state.scene = GAME_CLEAR;
     // タイムのボーナス
@@ -1816,7 +1808,6 @@ pause (void)
     }
     else
     {
-      StopMusic ();
       PlayMusic (MUSIC_STAGE, PLAY_LOOP_ON);
     }
   }

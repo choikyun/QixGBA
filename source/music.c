@@ -8,17 +8,17 @@
 const WaveListType MusicList[] =
   {
     { m0_bin, SAMPLING_M0, 10 }, //データアドレス, データ長, 優先度
-        { m1_bin, SAMPLING_M1, 10 },
-        { m2_bin, SAMPLING_M2, 10 },
-        { m3_bin, SAMPLING_M3, 10 } };
+    { m1_bin, SAMPLING_M1, 10 },
+    { m2_bin, SAMPLING_M2, 10 },
+    { m3_bin, SAMPLING_M3, 10 } };
 
 const WaveListType SoundList[] =
   {
     { s0_bin, SAMPLING_E0, 40 }, //データアドレス, データ長, 優先度(数字が小さいほど高い）
-        { s1_bin, SAMPLING_E1, 20 },
-        { s2_bin, SAMPLING_E2, 30 },
-        { s3_bin, SAMPLING_E3, 10 },
-        { s4_bin, SAMPLING_E4, 50 } };
+    { s1_bin, SAMPLING_E1, 20 },
+    { s2_bin, SAMPLING_E2, 30 },
+    { s3_bin, SAMPLING_E3, 10 },
+    { s4_bin, SAMPLING_E4, 50 } };
 
 //*************************************************************
 // 曲(A) 停止

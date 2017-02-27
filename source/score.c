@@ -76,21 +76,21 @@ load_hiscore ()
 u8
 SRAMRead8 (u32 offset)
 {
-  u8* sram = (u8*) SRAM + offset;
+  volatile u8* sram = (u8*) SRAM + offset;
   return (u8) sram[0];
 }
 
 u16
 SRAMRead16 (u32 offset)
 {
-  u8* sram = (u8*) SRAM + offset;
+  volatile u8* sram = (u8*) SRAM + offset;
   return (u16) sram[0] | (u16) sram[1] << 8;
 }
 
 u32
 SRAMRead32 (u32 offset)
 {
-  u8* sram = (u8*) SRAM + offset;
+  volatile u8* sram = (u8*) SRAM + offset;
   return (u32) sram[0] | (u32) sram[1] << 8 | (u32) sram[2] << 16
       | (u32) sram[3] << 24;
 }
@@ -99,14 +99,14 @@ SRAMRead32 (u32 offset)
 void
 SRAMWrite8 (u32 offset, u8 data)
 {
-  u8* sram = (u8*) SRAM + offset;
+  volatile u8* sram = (u8*) SRAM + offset;
   *sram = (u8) (data & 0xff);
 }
 
 void
 SRAMWrite16 (u32 offset, u16 data)
 {
-  u8* sram = (u8*) SRAM + offset;
+  volatile u8* sram = (u8*) SRAM + offset;
   *sram++ = (u8) ((data) & 0x00ff);
   *sram = (u8) ((data >> 8) & 0x00ff);
 }
@@ -114,7 +114,7 @@ SRAMWrite16 (u32 offset, u16 data)
 void
 SRAMWrite32 (u32 offset, u32 data)
 {
-  u8* sram = (u8*) SRAM + offset;
+  volatile u8* sram = (u8*) SRAM + offset;
   *sram++ = (u8) ((data) & 0x000000ff);
   *sram++ = (u8) ((data >> 8) & 0x000000ff);
   *sram++ = (u8) ((data >> 16) & 0x000000ff);
